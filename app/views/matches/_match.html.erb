@@ -1,17 +1,5 @@
-<div id="<%= dom_id match %>">
-  <p>
-    <strong>Team a:</strong>
-    <%= match.team_a_id %>
-  </p>
-
-  <p>
-    <strong>Team b:</strong>
-    <%= match.team_b_id %>
-  </p>
-
-  <p>
-    <strong>Played at:</strong>
-    <%= match.played_at %>
-  </p>
-
-</div>
+<tr id="<%= dom_id(match) %>">
+  <td><%= l match.played_at, format: :short %></td>
+  <td><%= match.team_a.name %></td>
+  <td><%= match.team_b.name %></td>
+</tr>
