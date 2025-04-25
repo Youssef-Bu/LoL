@@ -1,10 +1,28 @@
-<h2>5 derniers matchs</h2>
-
-<%= turbo_stream_from "matches" %> <!-- Hotwire, temps réel --> :contentReference[oaicite:6]{index=6}
+<h1>5 derniers matchs</h1>
 
 <table class="table">
-  <thead><tr><th>Date</th><th>Équipe A</th><th>Équipe B</th></tr></thead>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Équipe A</th>
+      <th>Équipe B</th>
+      <th>Score</th>
+    </tr>
+  </thead>
   <tbody>
-    <%= render @recent_matches %>
+    <% @recent_matches.each do |match| %>
+      <tr>
+        <td><%= l(match.played_at, format: :short) %></td>
+        <td><%= match.team_a.name %></td>
+        <td><%= match.team_b.name %></td>
+        <td>
+          <% if match.result.present? %>
+            <%= match.result.score %>
+          <% else %>
+            –
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
