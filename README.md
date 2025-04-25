@@ -1,24 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bash
+```
+git clone https://github.com/Youssef-Bu/LoL.git
+cd lol
+bundle install        # installe les gems
+bin/rails db:setup    # crée la base, lance toutes les migrations, seed les données
+bin/rails server      # http://127.0.0.1:3000/
