@@ -1,4 +1,3 @@
-bash
 ```
 git clone https://github.com/Youssef-Bu/LoL.git
 cd lol
