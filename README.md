@@ -1,7 +1,7 @@
 
 # 🏆 Match & Result Tracker
 
-Une application web Ruby on Rails pour gérer des compétitions sportives (e-sport, football, etc.).  
+Une application web Ruby on Rails de gestion de matchs League of Legends.  
 Elle permet de gérer les équipes, les joueurs, les matchs et les résultats dans une interface moderne et responsive.
 
 ---
