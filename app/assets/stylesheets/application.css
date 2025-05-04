@@ -8,3 +8,407 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ header[role="banner"] {
+    #logo-main {
+      display: block;
+      margin: 20px auto;
+    }
+  }
+  
+  #navbar-primary.navbar-default {
+    background: transparent;
+    border: none;
+    .navbar-nav { 
+      width: 100%;
+      text-align: center;
+      > li {
+        display: inline-block;
+        float: none;
+        > a {
+          padding-left: 30px;
+          padding-right: 30px;
+          }
+      }
+    }
+  }
+
+  footer {
+   margin-top: 200px;
+  }
+
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+thead th {
+  color: #fff;
+}
+
+#team {
+    background: white !important;
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #0f497b;
+    border-color: #0f497b;
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #0f497b;
+    border-color: #0f497b;
+    font-size: 14px !important;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    color: #08253e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+  }
+  #team .row > div[class*="col-"] {
+    margin-bottom: 30px;
+  }
+  
+  #team .card {
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    height: 248px;
+  }
+  
+  .card .card-title {
+    color: #07243d;
+  }
+  
+  .card-body img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 23px;
+    border-radius: 50%;
+  }
+  
+
+#players .row > div[class*="col-"] {
+    margin-bottom: 30px;
+  }
+  #matches {
+    background: white !important;
+  }
+  
+  
+  #matches .row > div[class*="col-"] {
+    margin-bottom: 30px;
+  }
+  
+  #matches .card {
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centre verticalement */
+    align-items: center;     /* centre horizontalement */
+    padding: 20px;           /* espace intérieur */
+    height: 100%;            /* important pour le centrage */
+    text-align: center;
+  }
+
+  
+  #players .card-body {
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centre verticalement */
+    align-items: center;     /* centre horizontalement */
+    padding: 20px;           /* espace intérieur */
+    height: 100%;            /* important pour le centrage */
+    text-align: center;
+  }
+  .custom-btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  .custom-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+    
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+
+    /* Style personnalisé pour les <select> comme MDB form-control */
+    #match_team_a_id {
+        display: block;
+        width: 100%; /* prend toute la largeur */
+        height: 40px; /* même que form-control-lg */
+        padding: 0.5rem 1rem;
+        font-size: 15px;
+        line-height: 1.5;
+        border-radius: 0.3rem;
+        border: 1px solid #ced4da;
+        background-color: #fff;
+        background-clip: padding-box;
+        appearance: none;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      
+      /* Ombre et focus */
+      #match_team_a_id:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+      
+
+
+#match_team_b_id {
+    display: block;
+    width: 100%; /* prend toute la largeur */
+    height: 40px; /* même que form-control-lg */
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    background-clip: padding-box;
+    appearance: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  #player_role {
+    display: block;
+    width: 100%; /* prend toute la largeur */
+    height: 40px; /* même que form-control-lg */
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    background-clip: padding-box;
+    appearance: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  #player_team_id {
+    display: block;
+    width: 100%; /* prend toute la largeur */
+    height: 40px; /* même que form-control-lg */
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    background-clip: padding-box;
+    appearance: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  #result_winner_id {
+    display: block;
+    width: 100%; /* prend toute la largeur */
+    height: 40px; /* même que form-control-lg */
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    background-clip: padding-box;
+    appearance: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  #result_loser_id {
+    display: block;
+    width: 100%; /* prend toute la largeur */
+    height: 40px; /* même que form-control-lg */
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    background-clip: padding-box;
+    appearance: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  #result_match_id {
+    display: block;
+    width: 100%; /* prend toute la largeur */
+    height: 40px; /* même que form-control-lg */
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    background-clip: padding-box;
+    appearance: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  /* Ombre et focus */
+  #match_team_b_id:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  /* Général: marge entre les lignes et alignement propre */
+.form-outline {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Custom select style avec flèche */
+  .custom-select-icon {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,0 140,0 70,100' fill='%23666'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  /* Ajustement de hauteur pour uniformité avec input-lg */
+  .custom-select-icon.form-control-lg {
+    height: 56px;
+  }
+  
+  /* Effet focus cohérent */
+  .custom-select-icon:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+  }
+  /* === Custom styling for Match Form Card === */
+.card-registration {
+  background: #ffffff; /* Couleur de fond */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+/* Espacement entre les éléments internes */
+.card-registration .form-outline {
+  margin-bottom: 1.5rem; /* Espacement entre les inputs */
+}
+
+/* Centrage et marge pour le bouton */
+.card-registration .btn {
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover sur le bouton */
+.card-registration .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Form background color and subtle border if needed */
+.card-registration .form-control {
+  background-color: #f9f9f9;
+  border: 1px solid #dee2e6;
+}
+
+/* Focus styles */
+.card-registration .form-control:focus {
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* === Custom styling for Match Form Card === */
+.card-registration {
+    background: #ffffff; /* Fond blanc */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem; /* 🧱 Espace intérieur autour du contenu */
+  }
+  
+  /* Espacement vertical entre les inputs */
+  .card-registration .form-outline {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Champs de formulaire */
+  .card-registration .form-control {
+    background-color: #f9f9f9;
+    border: 1px solid #dee2e6;
+    padding: 0.75rem 1rem; /* 🧱 Espace à l’intérieur des inputs */
+  }
+  
+  /* Focus input */
+  .card-registration .form-control:focus {
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Bouton centré, espacé et stylé */
+  .card-registration .btn {
+    margin-top: 2rem; /* ✅ Espace au-dessus du bouton */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Hover du bouton */
+  .card-registration .btn:hover {
+    transform: translateY(-2px);
+  }
+  .back-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .back-btn i {
+    font-size: 18px;
+  }
+  
+  .back-btn:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+  }
+  .custom-select-icon {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,0 140,0 70,100' fill='%23666'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    appearance: none;
+    padding-right: 2.5rem;
+  }
+  
+  

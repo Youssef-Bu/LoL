@@ -1,11 +1,14 @@
 <% content_for :title, "New team" %>
 
-<h1>New team</h1>
+<h1 style="text-align: center">New team</h1>
 
 <%= render "form", team: @team %>
 
 <br>
 
 <div>
-  <%= link_to "Back to teams", teams_path %>
+<%= link_to teams_path, class: "btn btn-outline-secondary back-btn" do %>
+  <i class="bi bi-arrow-left me-2"></i>
+  Back to teams
+<% end %>
 </div>

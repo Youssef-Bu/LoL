@@ -1,16 +1,28 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Players" %>
 
-<h1>Players</h1>
+<% if notice.present? %>
+  <div class="alert alert-success text-center my-3" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
-<div id="players">
-  <% @players.each do |player| %>
-    <%= render player %>
-    <p>
-      <%= link_to "Show this player", player %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New player", new_player_path %>
+<section id="players" class="pb-5">
+  <div class="container">
+    <h5 class="section-title h1">Our Players</h5>
+    <div class="row">
+      <% @players.each do |player| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card text-center mb-4">
+            <div class="card-body">
+              <%= render player %>
+              <%= link_to "Show player", player, class: "btn btn-primary btn-lg w-100 mt-3 shadow-sm custom-btn" %>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="text-center mt-4">
+    <%= link_to "New player", new_player_path, class: "btn btn-success btn-lg mt-4 shadow-sm custom-btn" %>
+    </div>
+  </div>
+</section>

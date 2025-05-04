@@ -1,11 +1,13 @@
 <% content_for :title, "New player" %>
 
-<h1>New player</h1>
+<h1 style="text-align: center">New player</h1>
 
 <%= render "form", player: @player %>
 
 <br>
-
 <div>
-  <%= link_to "Back to players", players_path %>
+<%= link_to players_path, class: "btn btn-outline-secondary back-btn" do %>
+  <i class="bi bi-arrow-left me-2"></i>
+  Back to players
+<% end %>
 </div>

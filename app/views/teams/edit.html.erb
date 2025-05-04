@@ -1,12 +1,16 @@
 <% content_for :title, "Editing team" %>
 
-<h1>Editing team</h1>
+<h1>Update team</h1>
 
 <%= render "form", team: @team %>
 
 <br>
 
-<div>
-  <%= link_to "Show this team", @team %> |
-  <%= link_to "Back to teams", teams_path %>
+<div class="d-flex justify-content-between align-items-center mt-4">
+  <%= link_to teams_path, class: "btn btn-outline-secondary back-btn" do %>
+    <i class="bi bi-arrow-left me-2"></i>
+    Back to teams
+  <% end %>
+
+  <%= link_to "Show team", @team, class: "btn btn-outline-secondary back-btn" %>
 </div>

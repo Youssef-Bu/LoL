@@ -1,12 +1,26 @@
 <% content_for :title, "Editing result" %>
 
-<h1>Editing result</h1>
+<section class="vh-100 d-flex justify-content-center align-items-center">
+  <div class="container">
+    
+    <h1 class="text-center mb-5">Edit Result</h1>
 
-<%= render "form", result: @result %>
+    <%= render "form", result: @result %>
 
-<br>
+    <div class="row">
+      <div class="col text-center">
+        <div class="d-inline-flex flex-wrap justify-content-center gap-3 mt-4">
 
-<div>
-  <%= link_to "Show this result", @result %> |
-  <%= link_to "Back to results", results_path %>
-</div>
+          <%= link_to results_path, class: "btn btn-outline-secondary back-btn" do %>
+            <i class="bi bi-arrow-left me-2"></i>
+            Back to results
+          <% end %>
+
+          <%= link_to "Show this result", @result, class: "btn btn-outline-primary back-btn" %>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

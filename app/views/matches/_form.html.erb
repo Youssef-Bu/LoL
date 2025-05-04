@@ -1,16 +1,48 @@
-<%= form_with(model: match) do |f| %>
-  <div class="mb-3">
-    <%= f.label :team_a_id, "Équipe A" %>
-    <%= f.collection_select :team_a_id, Team.all, :id, :name,
-          prompt: "Choisir l'équipe A", class: "form-select" %>
-  </div>
+<section class="vh-100 gradient-custom d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-12 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center"></h3>
 
-  <div class="mb-3">
-    <%= f.label :team_b_id, "Équipe B" %>
-    <%= f.collection_select :team_b_id, Team.all, :id, :name,
-          prompt: "Choisir l'équipe B", class: "form-select" %>
-  </div>
+            <%= form_with(model: match, local: true) do |f| %>
+              <div class="row gx-4 gy-4">
+                <div class="col-md-6">
+                  <div class="form-outline mb-4">
+                    <%= f.label :team_a_id, "Équipe A", class: "form-label" %>
+                    <%= f.collection_select :team_a_id, Team.all, :id, :name,
+                          prompt: "Choisir l'équipe A",
+                          class: "form-select custom-select-icon form-control-lg" %>
+                  </div>
+                </div>
 
-  <%= f.datetime_select :played_at, class: "form-control" %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+                <div class="col-md-6">
+                  <div class="form-outline mb-4">
+                    <%= f.label :team_b_id, "Équipe B", class: "form-label" %>
+                    <%= f.collection_select :team_b_id, Team.all, :id, :name,
+                          prompt: "Choisir l'équipe B",
+                          class: "form-select custom-select-icon form-control-lg" %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <%= f.label :played_at, "Date et heure du match", class: "form-label" %>
+                <%= f.text_field :played_at,
+                      value: match.played_at&.strftime("%Y-%m-%dT%H:%M"),
+                      class: "form-control form-control-lg",
+                      type: "datetime-local" %>
+              </div>
+
+              <div class="text-center mt-4 pt-2">
+                <%= f.submit "Save", class: "btn btn-primary btn-lg w-100 mt-3 shadow-sm custom-btn" %>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

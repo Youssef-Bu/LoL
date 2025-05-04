@@ -1,10 +1,37 @@
-<p style="color: green"><%= notice %></p>
+<section class="vh-100 d-flex justify-content-center align-items-center">
+  <div class="container">
+    <% if notice.present? %>
+      <div class="alert alert-success text-center mb-4">
+        <%= notice %>
+      </div>
+    <% end %>
 
-<%= render @match %>
+    <div class="text-center mb-4">
+      <%= render @match %>
+    </div>
 
-<div>
-  <%= link_to "Edit this match", edit_match_path(@match) %> |
-  <%= link_to "Back to matches", matches_path %>
+    <div class="row">
+    <div class="col text-center">
+      <div class="d-inline-flex flex-wrap justify-content-center gap-3 mt-3">
 
-  <%= button_to "Destroy this match", @match, method: :delete %>
-</div>
+      <%= link_to matches_path, class: "btn btn-outline-secondary back-btn" do %>
+        <i class="bi bi-arrow-left me-2"></i>
+        Back to matches
+      <% end %>
+        <%= link_to edit_match_path(@match), class: "btn btn-outline-primary back-btn" do %>
+          <i class="bi bi-pencil me-2"></i>
+          Edit this match
+        <% end %>
+  
+        
+  
+        <%= button_to "Destroy this match", @match,
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "btn btn-outline-danger back-btn" %>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</section>

@@ -1,16 +1,29 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Matches" %>
 
-<h1>Matches</h1>
+<% if notice.present? %>
+  <div class="alert alert-success text-center my-3" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
-<div id="matches">
-  <% @matches.each do |match| %>
-    <%= render match %>
-    <p>
-      <%= link_to "Show this match", match %>
-    </p>
-  <% end %>
-</div>
+<section id="matches" class="pb-5">
+  <div class="container">
+    <h5 class="section-title h1">Matches</h5>
+    <div class="row">
+      <% @matches.each do |match| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 mb-4">
+          <div class="card text-center h-100 shadow-sm">
+            <div class="card-body d-flex flex-column justify-content-center">
+              <%= render match %>
+              <%= link_to "Show Match", match, class: "btn btn-primary btn-lg w-100 mt-3 shadow-sm custom-btn" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-<%= link_to "New match", new_match_path %>
+    <div class="text-center mt-4">
+      <%= link_to "New match", new_match_path, class: "btn btn-success btn-lg shadow-sm custom-btn" %>
+    </div>
+  </div>
+</section>

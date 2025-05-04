@@ -1,16 +1,32 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Results" %>
 
-<h1>Results</h1>
+<section id="team" class="pb-5">
+  <div class="container">
 
-<div id="results">
-  <% @results.each do |result| %>
-    <%= render result %>
-    <p>
-      <%= link_to "Show this result", result %>
-    </p>
-  <% end %>
-</div>
+    <% if notice.present? %>
+      <div class="alert alert-success text-center my-3">
+        <%= notice %>
+      </div>
+    <% end %>
 
-<%= link_to "New result", new_result_path %>
+    <h5 class="section-title h1">Results</h5>
+
+    <div class="row">
+      <% @results.each do |result| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card text-center mb-4">
+            <div class="card-body">
+              <%= render result %>
+              <%= link_to "Show this result", result, class: "btn btn-primary btn-lg w-100 mt-3 shadow-sm custom-btn" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="text-center mt-4">
+      <%= link_to "New Result", new_result_path, class: "btn btn-success btn-lg mt-4 shadow-sm custom-btn" %>
+    </div>
+
+  </div>
+</section>

@@ -1,43 +1,70 @@
-<%= form_with(model: result, class: "card p-4") do |f| %>
-  <!-- 1. Choix du match -->
-  <div class="mb-3">
-    <%= f.label :match_id, "Match" %>
-    <%= f.collection_select :match_id,
-          Match.includes(:team_a, :team_b).order(played_at: :desc),
-          :id,
-          ->(m) { "#{m.team_a.name} vs #{m.team_b.name} – #{l m.played_at, format: :short}" },
-          prompt: "Choisir un match", class: "form-select" %>
-  </div>
+<section class="vh-100 gradient-custom d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-12 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 text-center">
+              <%= result.persisted? ? "Edit Result" : "New Result" %>
+            </h3>
 
-  <!-- 2. Choix du vainqueur -->
-  <div class="mb-3">
-    <%= f.label :winner_id, "Équipe gagnante" %>
-    <%= f.collection_select :winner_id,
-          Team.order(:name),
-          :id, :name,
-          prompt: "Sélectionner", class: "form-select" %>
-  </div>
+            <%= form_with(model: result, local: true) do |f| %>
 
-  <!-- 3. Choix du perdant -->
-  <div class="mb-3">
-    <%= f.label :loser_id, "Équipe perdante" %>
-    <%= f.collection_select :loser_id,
-          Team.order(:name),
-          :id, :name,
-          prompt: "Sélectionner", class: "form-select" %>
-  </div>
+              <!-- Match -->
+              <div class="form-outline mb-4">
+                <%= f.label :match_id, "Match", class: "form-label" %>
+                <%= f.collection_select :match_id,
+                      Match.includes(:team_a, :team_b).order(played_at: :desc),
+                      :id,
+                      ->(m) { "#{m.team_a.name} vs #{m.team_b.name} – #{l m.played_at, format: :short}" },
+                      prompt: "Choisir un match", class: "form-select form-control-lg custom-select-icon" %>
+              </div>
 
-  <!-- 4. Match nul -->
-  <div class="form-check mb-3">
-    <%= f.check_box :draw, class: "form-check-input" %>
-    <%= f.label :draw, "Match nul", class: "form-check-label" %>
-  </div>
+              <div class="row gx-4 gy-4">
+                <!-- Winner -->
+                <div class="col-md-6">
+                  <div class="form-outline mb-4">
+                    <%= f.label :winner_id, "Équipe gagnante", class: "form-label" %>
+                    <%= f.collection_select :winner_id,
+                          Team.order(:name),
+                          :id, :name,
+                          prompt: "Sélectionner", class: "form-select form-control-lg custom-select-icon" %>
+                  </div>
+                </div>
 
-  <!-- 5. Score -->
-  <div class="mb-3">
-    <%= f.label :score, "Score" %>
-    <%= f.text_field :score, class: "form-control", placeholder: "1-0" %>
-  </div>
+                <!-- Loser -->
+                <div class="col-md-6">
+                  <div class="form-outline mb-4">
+                    <%= f.label :loser_id, "Équipe perdante", class: "form-label" %>
+                    <%= f.collection_select :loser_id,
+                          Team.order(:name),
+                          :id, :name,
+                          prompt: "Sélectionner", class: "form-select form-control-lg custom-select-icon" %>
+                  </div>
+                </div>
+              </div>
 
-  <%= f.submit "Enregistrer", class: "btn btn-primary" %>
-<% end %>
+              <!-- Match nul -->
+              <div class="form-check mb-4">
+                <%= f.check_box :draw, class: "form-check-input", id: "result_draw" %>
+                <%= f.label :draw, "Match nul", class: "form-check-label" %>
+              </div>
+
+              <!-- Score -->
+              <div class="form-outline mb-4">
+                <%= f.label :score, "Score", class: "form-label" %>
+                <%= f.text_field :score, placeholder: "1-0", class: "form-control form-control-lg" %>
+              </div>
+
+              <!-- Submit -->
+              <div class="text-center mt-4 pt-2">
+                <%= f.submit "Save", class: "btn btn-primary btn-lg w-100 shadow-sm" %>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

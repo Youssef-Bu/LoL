@@ -1,11 +1,13 @@
 <% content_for :title, "New match" %>
-
-<h1>New match</h1>
+<h1 style="text-align: center">New match</h1>
 
 <%= render "form", match: @match %>
 
 <br>
 
 <div>
-  <%= link_to "Back to matches", matches_path %>
+<%= link_to matches_path, class: "btn btn-outline-secondary back-btn" do %>
+  <i class="bi bi-arrow-left me-2"></i>
+  Back to matches
+<% end %>
 </div>
